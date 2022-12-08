@@ -1,5 +1,3 @@
-//javac -cp lib\jade.jar -d classes C:\Users\geist\Desktop\JADE-all-4.5.0\jade\SLRAgent.java
-//java -cp lib\jade.jar;classes jade.Boot -gui -agents SLR:simpleLinearRegression.SLRAgent
 package simpleLinearRegression;
 
 import jade.core.Agent;
@@ -18,14 +16,12 @@ public class SLRAgent extends Agent {
     protected void setup() {
         System.out.println("Agent " + getLocalName() + " started.");
 
-        //Object[] args = getArguments();
-        //if (args != null && args.length > 0) {
+        
             addBehaviour(new Train());
             addBehaviour(new PresentData());
             predictX = 10;
             System.out.println("x to predict = " + predictX);
-       // }
-
+       
     }
 
     private class Train extends Behaviour {
